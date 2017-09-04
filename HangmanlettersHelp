@@ -1,0 +1,23 @@
+"""
+Example:
+    lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+    print(getAvailableLetters(lettersGuessed))
+    abcdfghjlmnoqtuvwxyz
+
+After running some test what I get:
+abcdefghijklmnopqrstuvwxyz
+None
+
+While I should get:
+'abcdefghijklmnopqrstuvwxyz'
+"""
+
+
+def getAvailableLetters(lettersGuessed):
+  import string
+  lettersList = string.ascii_lowercase
+  for letter in lettersGuessed:
+    if letter in lettersList:
+      index=lettersList.find(letter)
+      lettersList = lettersList[:index]+lettersList[index+1:]
+  print(str(lettersList))
